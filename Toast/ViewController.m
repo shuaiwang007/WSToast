@@ -44,33 +44,26 @@
 
 - (UIButton *)textBtn {
     if (!_textBtn) {
-        _textBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 50, 80, 30)];
-        _textBtn.tag = textBtnTypeNormal;
-        _textBtn.backgroundColor =[UIColor darkGrayColor];
-        [_textBtn setTitle:@"点我" forState:UIControlStateNormal];
-        [_textBtn addTarget:self action:@selector(textBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+        _textBtn = [[UIButton alloc] init];
+        [self createABtn:_textBtn Tag:textBtnTypeNormal Title:@"点我"];
+       
     }
     return _textBtn;
 }
 
 - (UIButton *)textBtn2 {
     if (!_textBtn2) {
-        _textBtn2 = [[UIButton alloc] initWithFrame:CGRectMake(30, 100, 80, 30)];
-        _textBtn2.tag = textBtnTypeTwo;
-        _textBtn2.backgroundColor =[UIColor darkGrayColor];
-        [_textBtn2 setTitle:@"点我2" forState:UIControlStateNormal];
-        [_textBtn2 addTarget:self action:@selector(textBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+        _textBtn2 = [[UIButton alloc] init];
+        [self createABtn:_textBtn2 Tag:textBtnTypeTwo Title:@"点我2"];
+       
     }
     return _textBtn2;
 }
 
 - (UIButton *)textBtn3 {
     if (!_textBtn3) {
-        _textBtn3 = [[UIButton alloc] initWithFrame:CGRectMake(30, 150, 80, 30)];
-        _textBtn3.tag = textBtnTypeThree;
-        _textBtn3.backgroundColor =[UIColor darkGrayColor];
-        [_textBtn3 setTitle:@"点我3" forState:UIControlStateNormal];
-        [_textBtn3 addTarget:self action:@selector(textBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+        _textBtn3 = [[UIButton alloc] init];
+        [self createABtn:_textBtn3 Tag:textBtnTypeThree Title:@"点我3"];
     }
     return _textBtn3;
 }
@@ -85,14 +78,23 @@
             [self.textBtn2 makeToastWithOnlyText:@"天灰灰。。。" toView:self.view cornerRadius:5.0 msgViewBgColor:[UIColor lightGrayColor] textColor:[UIColor whiteColor] textFont:[UIFont systemFontOfSize:12] dimBackground:YES afterDelay:2.0];
             break;
         case textBtnTypeThree:
-            [self.textBtn3 makeToastWtihCustomView:self.customView msgContent:@"55555" toView:self.view msgViewBgColor:[UIColor redColor] textColor:[UIColor whiteColor] textFont:[UIFont systemFontOfSize:12] dimBackground:YES afterDelay:2.0];
+            [self.textBtn3 makeToastWtihCustomView:self.customView msgContent:@"55555" toView:self.view msgViewBgColor:[UIColor blackColor] textColor:[UIColor whiteColor] textFont:[UIFont systemFontOfSize:12] dimBackground:YES afterDelay:2.0];
         default:
             break;
     }
     
 }
 
-
+- (UIButton *)createABtn:(UIButton *)btn Tag:(NSInteger)tag Title:(NSString *)title {
+    
+    btn.tag  =tag;
+    btn.frame = CGRectMake(30, 150, 80, 30);
+    btn.backgroundColor = [UIColor darkGrayColor];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(textBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
