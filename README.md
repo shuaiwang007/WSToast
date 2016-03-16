@@ -2,7 +2,7 @@
 封装Toast，可直接调接口使用，并可高度自定义（同时封装了NSData、NSString）
 ![No.1](http://7xrv08.com1.z0.glb.clouddn.com/toast1.png)
 ![No.2](http://7xrv08.com1.z0.glb.clouddn.com/toast2.png)
-![No.3](http://7xrv08.com1.z0.glb.clouddn.com/toast3.png)
+![No.3](http://7xrv08.com1.z0.glb.clouddn.com/tt.png)
 ###使用方法
 #####使用前提
 > *pod MBProgressHUD
